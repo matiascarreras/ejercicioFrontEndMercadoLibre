@@ -1,0 +1,25 @@
+{
+  "name": "ejerciciofrontendmercadolibre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiascarreras/ejercicioFrontEndMercadoLibre.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiascarreras/ejercicioFrontEndMercadoLibre/issues"
+  },
+  "homepage": "https://github.com/matiascarreras/ejercicioFrontEndMercadoLibre#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.7"
+  }
+}
