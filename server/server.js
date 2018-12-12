@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const utils = require('./utils');
 const app = express();
 const port = 5000;
 
@@ -15,34 +16,6 @@ function get(url) {
   })
 }
 
-function currencyConvertor(currencyId) {
-  if(currencyId === 'ARS'){
-    return '$';
-  }
-}
-
-function priceConvertor(price) {
-  let returnObject = {}
-  if(price.toString().includes('.')){
-    let formatPrice = price.toString().split('.')
-    returnObject['amount'] = parseInt(formatPrice[0])
-    returnObject['decimals'] = parseInt(formatPrice[1])
-  } else {
-    returnObject['amount'] = price
-    returnObject['decimals'] = 0
-  }
-  return returnObject
-}
-
-function conditionConvertor(condition) {
-  if(condition === 'new'){
-    return 'Nuevo';
-  }
-  if(condition === 'used'){
-    return 'Usado';
-  }
-}
-
 app.get('/api/items', (req, res) => {
 
 	let query = req.query.q;
@@ -51,18 +24,18 @@ app.get('/api/items', (req, res) => {
     .then(res => res.json())
     .then(data => {
       let items = data.results.map((result, i) => {
-        let price = priceConvertor(result.price)
+        let price = utils.priceConvertor(result.price)
         return (
           {
             id: result.id,
             title: result.title,
             price: {
-              currency: currencyConvertor(result.currency_id),
+              currency: utils.currencyConvertor(result.currency_id),
               amount: price['amount'],
               decimals: price['decimals']
             },
             picture: result.thumbnail,
-            condition: conditionConvertor(result.condition),
+            condition: utils.conditionConvertor(result.condition),
             free_shipping: result.shipping.free_shipping,
             location: result.address.state_name
           }
@@ -98,17 +71,17 @@ app.get('/api/items/:id', (req, res) => {
 		get('https://api.mercadolibre.com/items/' + id + '/description')
 	])
 	.then(([itemData, descriptionData]) => {
-    let price = priceConvertor(itemData.price)
+    let price = utils.priceConvertor(itemData.price)
     let item = {
       id: itemData.id,
       title: itemData.title,
       price: {
-        currency: currencyConvertor(itemData.currency_id),
+        currency: utils.currencyConvertor(itemData.currency_id),
         amount: price['amount'],
         decimals: price['decimals']
       },
       picture: itemData.pictures[0].url,
-      condition: conditionConvertor(itemData.condition),
+      condition: utils.conditionConvertor(itemData.condition),
       free_shipping: itemData.shipping.free_shipping,
       sold_quantity: itemData.sold_quantity,
       description: descriptionData.plain_text
