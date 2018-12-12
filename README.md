@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 Necesita descargar una copia del repositorio
 
 ```
-git clone git:https://github.com/matiascarreras/ejercicioFrontEndMercadoLibre.git
+git clone https://github.com/matiascarreras/ejercicioFrontEndMercadoLibre.git
 ```
 
 ### Instalación
