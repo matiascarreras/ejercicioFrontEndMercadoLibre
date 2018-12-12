@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
-import './searchBox.css';
+import './searchBox.scss';
 import logoML from '../../assets/Logo_ML@2x.png.png.png'
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'
 import searchBoxActions from '../../actions/searchBoxActions'

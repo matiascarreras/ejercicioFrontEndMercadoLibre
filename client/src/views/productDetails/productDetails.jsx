@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import './productDetails.css';
+import './productDetails.scss';
 import SearchBox from '../searchBox/searchBox';
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'
 import productDetailsActions from '../../actions/productDetailsActions'

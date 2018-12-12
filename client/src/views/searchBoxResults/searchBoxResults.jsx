@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import queryString from 'query-string'
 
-import './searchBoxResults.css';
+import './searchBoxResults.scss';
 import SearchBox from '../searchBox/searchBox';
 import SearchBoxResult from '../../components/searchBoxResult/searchBoxResult';
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'

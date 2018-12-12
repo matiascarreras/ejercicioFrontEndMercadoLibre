@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './searchBoxResult.css';
+import './searchBoxResult.scss';
 import freeShippingLogo from '../../assets/ic_shipping@2x.png.png.png';
 
 class SearchBoxResult extends Component {
