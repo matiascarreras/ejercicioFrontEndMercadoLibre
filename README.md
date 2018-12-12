@@ -2,11 +2,11 @@
 
 Aplicación utilizando la api de mercadolibre para buscar resultados, mostrarlos y acceder al detalle de los productos.
 
-## Getting Started
+## Empezando
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Prerrequisitos
 
 Necesita descargar una copia del repositorio
 
@@ -14,7 +14,7 @@ Necesita descargar una copia del repositorio
 git clone git:https://github.com/matiascarreras/ejercicioFrontEndMercadoLibre.git
 ```
 
-### Installing
+### Instalación
 
 Ingresar al directorio donde se descargó el repositorio, situarse en la carpeta principal y ejecutar el siguiente comando
 
@@ -46,13 +46,7 @@ npm start
 
 El servidor corre en la ruta base 'localhost:5000'
 
-## Deployment
-
-```
-npm run build
-```
-
-## Built With
+## Tecnologías utilizadas
 
 * [React](https://reactjs.org/)
 * [Redux](https://es.redux.js.org/)
@@ -60,6 +54,6 @@ npm run build
 * [Node](https://nodejs.org/es/)
 * [Express](https://expressjs.com/es/)
 
-## Author
+## Autor
 
 * **Matías Carreras** 
