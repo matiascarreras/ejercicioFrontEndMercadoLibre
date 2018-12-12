@@ -8,6 +8,7 @@ import SearchBox from '../searchBox/searchBox';
 import SearchBoxResult from '../searchBoxResult/searchBoxResult';
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'
 import searchBoxResultsActions from '../../actions/searchBoxResultsActions'
+import { localize } from '../../helpers/translator'
 
 class SearchBoxResults extends Component {
 
@@ -49,7 +50,7 @@ class SearchBoxResults extends Component {
 		        			key={item.id}
 		        			id={item.id}
 		        			picture={item.picture}
-		        			price={item.price.currency + ' ' + this.formatPrice(item.price.amount)}
+		        			price={localize("item_currency_id_" + item.price.currency) + ' ' + this.formatPrice(item.price.amount)}
 		        			freeShipping={item.free_shipping}
 		        			location={item.location}
 		        			title={item.title}

@@ -1,11 +1,5 @@
 module.exports = {
 
-	currencyConvertor: function(currencyId) {
-		if(currencyId === 'ARS') {
-			return '$'
-		}
-	},
-
 	priceConvertor: function(price) {
 		let returnObject = {}
 		if(price.toString().includes('.')){
@@ -17,15 +11,6 @@ module.exports = {
 			returnObject['decimals'] = 0
 		}
 		return returnObject
-	},
-
-	conditionConvertor(condition) {
-		if(condition === 'new') {
-			return 'Nuevo'
-		}
-		if(condition === 'used') {
-			return 'Usado'
-		}
 	}
 
 }

@@ -30,12 +30,12 @@ app.get('/api/items', (req, res) => {
             id: result.id,
             title: result.title,
             price: {
-              currency: utils.currencyConvertor(result.currency_id),
+              currency: result.currency_id,
               amount: price['amount'],
               decimals: price['decimals']
             },
             picture: result.thumbnail,
-            condition: utils.conditionConvertor(result.condition),
+            condition: result.condition,
             free_shipping: result.shipping.free_shipping,
             location: result.address.state_name
           }
@@ -76,12 +76,12 @@ app.get('/api/items/:id', (req, res) => {
       id: itemData.id,
       title: itemData.title,
       price: {
-        currency: utils.currencyConvertor(itemData.currency_id),
+        currency: itemData.currency_id,
         amount: price['amount'],
         decimals: price['decimals']
       },
       picture: itemData.pictures[0].url,
-      condition: utils.conditionConvertor(itemData.condition),
+      condition: itemData.condition,
       free_shipping: itemData.shipping.free_shipping,
       sold_quantity: itemData.sold_quantity,
       description: descriptionData.plain_text

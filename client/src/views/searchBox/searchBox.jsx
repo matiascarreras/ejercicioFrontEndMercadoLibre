@@ -6,6 +6,7 @@ import './searchBox.scss';
 import logoML from '../../assets/Logo_ML@2x.png.png.png'
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'
 import searchBoxActions from '../../actions/searchBoxActions'
+import { localize } from '../../helpers/translator'
 
 class SearchBox extends Component {
 
@@ -39,7 +40,7 @@ class SearchBox extends Component {
 	    			<img id="search-box-logo" src={logoML} alt="logoML"/>
 			    	<input 
 			    		type="text"
-			    		placeholder="Nunca dejes de buscar"
+			    		placeholder={localize('search_box_input_placeholder')}
 			    		value={this.props.search}
 			    		onChange={this.onChange}
 			   			id="search-box-input"

@@ -5,6 +5,7 @@ import './productDetails.scss';
 import SearchBox from '../searchBox/searchBox';
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'
 import productDetailsActions from '../../actions/productDetailsActions'
+import { localize } from '../../helpers/translator'
 
 class ProductDetails extends Component {
 
@@ -61,18 +62,18 @@ class ProductDetails extends Component {
 			    		<div className="product-details-container">
 			    			<img className="product-details-img" src={this.props.item.picture} alt="product-img" />
 			    			<div className="product-details-info">
-			    				<div className="product-details-sell-info">{this.props.item.condition + ' - ' + this.props.item.sold_quantity + ' vendidos'}</div>
+			    				<div className="product-details-sell-info">{localize('item_condition_' + this.props.item.condition) + ' - ' + this.props.item.sold_quantity + ' ' + localize('product_details_sell_text')}</div>
 			    				<div className="product-details-title">{this.props.item.title}</div>
 			    				<div className="product-details-price">
-			    					<span className="product-details-price-currency">{this.props.item.currency}</span>
+			    					<span className="product-details-price-currency">{localize('item_currency_id_' + this.props.item.currency)}</span>
 				    				<span className="product-details-price-amount">{this.formatPrice(this.props.item.amount)}</span>
 				    				<span className="product-details-price-decimals">{decimals}</span>			    					
 			    				</div>
-			    				<button id="product-details-buy-button">Comprar</button>
+			    				<button id="product-details-buy-button">{localize('product_details_buy_button')}</button>
 			    			</div>
 			    			<div className="product-details-description">
-			    				<div className="product-details-description-title">Descripcion del producto</div>
-			    				<div className="product-details-description-text">{(this.props.item.description) ? this.props.item.description.replace(/ {2}/g, '\n') : 'El vendedor no incluyó una descripción del producto'}</div>
+			    				<div className="product-details-description-title">{localize('product_details_description_title')}</div>
+			    				<div className="product-details-description-text">{(this.props.item.description) ? this.props.item.description.replace(/ {2}/g, '\n') : localize('product_details_description_empty_text')}</div>
 			    			</div>
 			    		</div>
 			    	</div>
