@@ -5,7 +5,7 @@ import queryString from 'query-string'
 
 import './searchBoxResults.scss';
 import SearchBox from '../searchBox/searchBox';
-import SearchBoxResult from '../../components/searchBoxResult/searchBoxResult';
+import SearchBoxResult from '../searchBoxResult/searchBoxResult';
 import bindActionsToDispatch from '../../helpers/bindActionsToDispatch'
 import searchBoxResultsActions from '../../actions/searchBoxResultsActions'
 
