@@ -1,10 +1,10 @@
 export default { 
 	en: {
 		search_box_input_placeholder:"Never stop searching",
-		product_details_sell_text: "",
+		product_details_sell_text: "sold",
 		product_details_buy_button: "Buy",
 		product_details_description_title: "Product description",
-		product_details_description_empty_text: "",
+		product_details_description_empty_text: "The seller did not include a description of the product",
 		item_condition_new: "New",
 		item_condition_used: "Used",
 		item_currency_id_ARS: "$"
